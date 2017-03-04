@@ -1,0 +1,3 @@
+[submodule "dnsenum"]
+	path = dnsenum
+	url = git@github.com:fwaeytens/dnsenum.git
