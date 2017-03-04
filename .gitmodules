@@ -1,3 +1,6 @@
 [submodule "dnsenum"]
 	path = dnsenum
 	url = git@github.com:fwaeytens/dnsenum.git
+[submodule "lunar"]
+	path = lunar
+	url = git@github.com:lateralblast/lunar.git
