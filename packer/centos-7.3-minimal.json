@@ -1,0 +1,146 @@
+{
+  "variables": {
+    "release": "1611",
+    "mirror": "http://centos.hitme.net.pl/7/isos/x86_64/",
+    "iso_sha1": "71a7aa147877b413497cdff5b1e0aa5bc0c9484f",
+    "root_password": "root_password",
+    "virtualbox_headless": "true",
+    "virtualbox_disk_size": "20480",
+    "aws_access_key": "{{ env `AWS_ACCES_KEY_ID` }}",
+    "aws_secret_key": "{{ env `AWS_SECRET_ACCESS_KEY` }}",
+    "aws_region": "",
+    "aws_s3_bucket": "",
+    "aws_ami_name": "CentOS-7-x86_64-Minimal"
+  },
+
+  "builders": [
+  {
+    "type": "virtualbox-iso",
+    "name": "vagrant",
+    "guest_os_type": "RedHat_64",
+    "http_directory": "http",
+    "headless": "{{ user `virtualbox_headless` }}",
+    "guest_additions_mode": "disable",
+    "iso_urls": [
+      "./CentOS-7-x86_64-Minimal-1611.iso",
+      "{{ user `mirror` }}/CentOS-7-x86_64-Minimal-{{ user `release` }}.iso"
+    ],
+    "iso_checksum": "{{ user `iso_sha1` }}",
+    "iso_checksum_type": "sha1",
+    "ssh_username": "root",
+    "ssh_password": "{{ user `root_password` }}",
+    "ssh_wait_timeout": "1000s",
+    "shutdown_command": "shutdown -h now",
+    "disk_size": "{{ user `virtualbox_disk_size` }}",
+    "boot_wait": "5s",
+    "boot_command": [
+      "<esc><wait>",
+      "linux text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg",
+      "<enter><wait>"
+    ],
+    "vboxmanage": [
+      [
+        "modifyvm",
+        "{{.Name}}",
+        "--memory",
+        "512"
+      ],
+      [
+        "modifyvm",
+        "{{.Name}}",
+        "--cpus",
+        "2"
+      ]
+    ]
+  },
+  {
+    "type": "virtualbox-iso",
+    "name": "aws",
+    "guest_os_type": "RedHat_64",
+    "http_directory": "http",
+    "headless": "{{ user `virtualbox_headless` }}",
+    "guest_additions_mode": "disable",
+    "iso_urls": [
+      "./CentOS-7-x86_64-Minimal-1611.iso",
+      "{{ user `mirror` }}/CentOS-7-x86_64-Minimal-{{ user `release` }}.iso"
+    ],
+    "iso_checksum": "{{ user `iso_sha1` }}",
+    "iso_checksum_type": "sha1",
+    "ssh_username": "root",
+    "ssh_password": "{{ user `root_password` }}",
+    "ssh_wait_timeout": "1000s",
+    "shutdown_command": "shutdown -h now",
+    "disk_size": "{{ user `virtualbox_disk_size` }}",
+    "boot_wait": "5s",
+    "boot_command": [
+      "<esc><wait>",
+      "linux text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg",
+      "<enter><wait>"
+    ],
+    "vboxmanage": [
+      [
+        "modifyvm",
+        "{{.Name}}",
+        "--memory",
+        "512"
+      ],
+      [
+        "modifyvm",
+        "{{.Name}}",
+        "--cpus",
+        "2"
+      ]
+    ]
+  }
+  ],
+
+  "provisioners": [
+  {
+    "type": "shell",
+    "execute_command": "sh '{{.Path}}'",
+    "scripts": [
+      "scripts/base.sh"
+    ]
+  },
+  {
+    "type": "shell",
+    "execute_command": "sh '{{.Path}}'",
+    "only": ["vagrant"],
+    "scripts": [
+      "scripts/vagrant.sh"
+    ]
+  },
+  {
+    "type": "shell",
+    "execute_command": "sh '{{.Path}}'",
+    "only": ["aws"],
+    "scripts": [
+      "scripts/aws.sh"
+    ]
+  },
+  {
+    "type": "shell",
+    "execute_command": "sh '{{.Path}}'",
+    "scripts": [
+      "scripts/cleanup.sh"
+    ]
+  }
+  ],
+
+  "post-processors": [
+  {
+    "type": "vagrant",
+    "only": ["vagrant"],
+    "output": "centos-7.3-minimal-{{.Provider}}.box"
+  },
+  {
+    "type": "amazon-import",
+    "only": ["aws"],
+    "access_key": "{{ user `aws_access_key` }}",
+    "secret_key": "{{ user `aws_secret_key` }}",
+    "region": "{{ user `aws_region` }}",
+    "s3_bucket_name": "{{ user `aws_s3_bucket` }}",
+    "ami_name": "{{ user `aws_ami_name` }}"
+  }
+  ]
+}
