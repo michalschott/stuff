@@ -4,3 +4,6 @@
 [submodule "lunar"]
 	path = lunar
 	url = git@github.com:lateralblast/lunar.git
+[submodule "ssh-audit"]
+	path = ssh-audit
+	url = git@github.com:arthepsy/ssh-audit.git
