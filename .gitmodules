@@ -7,3 +7,6 @@
 [submodule "ssh-audit"]
 	path = ssh-audit
 	url = git@github.com:arthepsy/ssh-audit.git
+[submodule "setup-ipsec-vpn"]
+	path = setup-ipsec-vpn
+	url = git@github.com:hwdsl2/setup-ipsec-vpn.git
