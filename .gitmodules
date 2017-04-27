@@ -10,3 +10,6 @@
 [submodule "setup-ipsec-vpn"]
 	path = setup-ipsec-vpn
 	url = git@github.com:hwdsl2/setup-ipsec-vpn.git
+[submodule "probable-wordlists"]
+	path = probable-wordlists
+	url = git@github.com:berzerk0/Probable-Wordlists.git
