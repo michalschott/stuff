@@ -16,3 +16,6 @@
 [submodule "lynis"]
 	path = lynis
 	url = git@github.com:CISOfy/lynis.git
+[submodule "aws-amicleaner"]
+	path = aws-amicleaner
+	url = git@github.com:bonclay7/aws-amicleaner.git
