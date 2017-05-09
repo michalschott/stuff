@@ -13,3 +13,6 @@
 [submodule "probable-wordlists"]
 	path = probable-wordlists
 	url = git@github.com:berzerk0/Probable-Wordlists.git
+[submodule "lynis"]
+	path = lynis
+	url = git@github.com:CISOfy/lynis.git
