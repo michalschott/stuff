@@ -19,3 +19,6 @@
 [submodule "aws-amicleaner"]
 	path = aws-amicleaner
 	url = git@github.com:bonclay7/aws-amicleaner.git
+[submodule "gixy"]
+	path = gixy
+	url = git@github.com:yandex/gixy.git
