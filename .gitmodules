@@ -22,3 +22,6 @@
 [submodule "gixy"]
 	path = gixy
 	url = git@github.com:yandex/gixy.git
+[submodule "aws-cis-security-benchmark"]
+	path = aws-cis-security-benchmark
+	url = https://github.com/Alfresco/aws-cis-security-benchmark
