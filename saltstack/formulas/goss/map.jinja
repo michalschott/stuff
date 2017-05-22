@@ -1,0 +1,7 @@
+{% set goss = salt['grains.filter_by']({
+  'default': {
+    'endpoint': 'healthz',
+    'port'    : '9876',
+    'cache'   : '5s',
+  },
+}, merge=salt['pillar.get']('goss')) %}

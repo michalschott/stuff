@@ -1,0 +1,2 @@
+# THIS FILE REQUIRES TABS NOT SPACES
+{{ local_dir }}	-fstype={{ fstype }}	{% if remote_server %}{{ remote_server }}{% endif %}:{{ remote_dir }}

@@ -1,0 +1,14 @@
+{% from "goss/map.jinja" import goss with context -%}
+[Unit]
+Description=GOSS tests
+ConditionFileIsExecutable=/opt/goss/goss.sh
+
+[Service]
+Type=oneshot
+ExecStart=/opt/goss/goss.sh -e {{ goss.endpoint }} -p {{ goss.port }} -c {{ goss.cache }}
+ExecStop=/bin/kill -9 $MAINPID
+ExecReload=/bin/kill -9 $MAINPID && /opt/goss/goss.sh -e {{ goss.endpoint }} -p {{ goss.port }}
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

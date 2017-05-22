@@ -1,0 +1,9 @@
+{% set nscd = salt['grains.filter_by']({
+  'default': {
+    'enable_passwd': 'no',
+    'enable_group': 'no',
+    'enable_hosts': 'yes',
+    'enable_services': 'no',
+    'enable_netgroup': 'no',
+  },
+}, merge=salt['pillar.get']('nscd:lookup')) %}
