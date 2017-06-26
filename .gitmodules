@@ -25,3 +25,6 @@
 [submodule "aws-cis-security-benchmark"]
 	path = aws-cis-security-benchmark
 	url = https://github.com/Alfresco/aws-cis-security-benchmark
+[submodule "kube-bench"]
+	path = kube-bench
+	url = https://github.com/aquasecurity/kube-bench
