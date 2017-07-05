@@ -34,3 +34,6 @@
 [submodule "dotdotpwn"]
 	path = dotdotpwn
 	url = https://github.com/wireghoul/dotdotpwn.git
+[submodule "wpscan"]
+	path = wpscan
+	url = https://github.com/wpscanteam/wpscan.git
