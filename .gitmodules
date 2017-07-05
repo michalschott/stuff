@@ -28,3 +28,6 @@
 [submodule "kube-bench"]
 	path = kube-bench
 	url = https://github.com/aquasecurity/kube-bench
+[submodule "kubeval"]
+	path = kubeval
+	url = https://github.com/garethr/kubeval.git
