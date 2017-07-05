@@ -31,3 +31,6 @@
 [submodule "kubeval"]
 	path = kubeval
 	url = https://github.com/garethr/kubeval.git
+[submodule "dotdotpwn"]
+	path = dotdotpwn
+	url = https://github.com/wireghoul/dotdotpwn.git
