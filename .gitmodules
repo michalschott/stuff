@@ -37,3 +37,6 @@
 [submodule "wpscan"]
 	path = wpscan
 	url = https://github.com/wpscanteam/wpscan.git
+[submodule "beeswithmachineguns"]
+	path = beeswithmachineguns
+	url = https://github.com/newsapps/beeswithmachineguns.git
