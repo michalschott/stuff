@@ -43,3 +43,6 @@
 [submodule "tf_aws_vpc"]
 	path = tf_aws_vpc
 	url = git@github.com:terraform-community-modules/tf_aws_vpc.git
+[submodule "envchain"]
+	path = envchain
+	url = git@github.com:sorah/envchain.git
