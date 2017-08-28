@@ -1,6 +1,7 @@
 # Terraform
 *.tfstate*
 *.tfvars
+.terraform
 
 # Packer
 *.iso
