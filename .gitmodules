@@ -46,3 +46,6 @@
 [submodule "envchain"]
 	path = envchain
 	url = git@github.com:sorah/envchain.git
+[submodule "sslyze"]
+	path = sslyze
+	url = git@github.com:nabla-c0d3/sslyze.git
