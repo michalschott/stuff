@@ -49,3 +49,6 @@
 [submodule "sslyze"]
 	path = sslyze
 	url = git@github.com:nabla-c0d3/sslyze.git
+[submodule "terraboard"]
+	path = terraboard
+	url = git@github.com:camptocamp/terraboard.git
