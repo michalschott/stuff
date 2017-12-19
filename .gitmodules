@@ -52,3 +52,6 @@
 [submodule "terraboard"]
 	path = terraboard
 	url = git@github.com:camptocamp/terraboard.git
+[submodule "dnsrecon"]
+	path = dnsrecon
+	url = git@github.com:darkoperator/dnsrecon.git
