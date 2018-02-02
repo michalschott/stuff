@@ -7,3 +7,6 @@
 *.iso
 *.box
 packer_cache
+
+# Mac
+.DS_Store
