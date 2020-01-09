@@ -55,3 +55,15 @@
 [submodule "dnsrecon"]
 	path = dnsrecon
 	url = git@github.com:darkoperator/dnsrecon.git
+[submodule "terraform-aws-secure-baseline"]
+	path = terraform-aws-secure-baseline
+	url = git@github.com:nozaq/terraform-aws-secure-baseline.git
+[submodule "terrascan"]
+	path = terrascan
+	url = git@github.com:cesar-rodriguez/terrascan.git
+[submodule "tfsec"]
+	path = tfsec
+	url = git@github.com:liamg/tfsec.git
+[submodule "checkov"]
+	path = checkov
+	url = git@github.com:bridgecrewio/checkov.git
